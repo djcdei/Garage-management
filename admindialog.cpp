@@ -160,52 +160,55 @@ void adminDialog::on_tableWidget_itemChanged(QTableWidgetItem *item)//输入框�
     int row = item->row(); // 获取行号
     QTableWidgetItem *firstitem=ui->tableWidget->item(row,0);
     int col = item->column(); // 获取列号,根据列号来判断哪一个类型的数据改变了
-    if (!mybase.isOpen())
+    if (!mybase.isOpen())//判断数据库是否打开了
     {
         if(!mybase.open())
-            qDebug() << "无法打开数据库连接：" << mybase.lastError().text();
-            return;
+        {       qDebug() << "无法打开数据库连接：" << mybase.lastError().text();
+                return;
+        }
+        QSqlQuery query(mybase);
+        QString cmd;
+
+        // 添加更多列和类型的映射
+        switch (col)
+        {
+        case 0:
+                qDebug()<<"第一列";
+                cmd=QString("UPDATE admintable SET id = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
+                break;
+        case 1:
+                qDebug()<<"第二列";
+                cmd=QString("UPDATE admintable SET plate_info = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
+                break;
+        case 2:
+                qDebug()<<"第三列";
+                cmd=QString("UPDATE admintable SET balance = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
+                break;
+        case 3:
+                qDebug()<<"第四列";
+                cmd=QString("UPDATE admintable SET position = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
+                break;
+        case 4:
+                qDebug()<<"第五列";
+                cmd=QString("UPDATE admintable SET statime = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
+                break;
+        case 5:
+                qDebug()<<"第六列";
+                cmd=QString("UPDATE admintable SET endtime = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
+                break;
+        default:
+                break;
+        }
+        int ret=query.exec(cmd);
+        if(!ret)
+        {
+                printf("更新位置失败\n");
+                return ;
+        }
+
     }
 
-    QSqlQuery query(mybase);
-    QString cmd;
 
-    // 添加更多列和类型的映射
-    switch (col)
-    {
-    case 0:
-        qDebug()<<"第一列";
-        cmd=QString("UPDATE admintable SET id = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
-        break;
-    case 1:
-        qDebug()<<"第二列";
-        cmd=QString("UPDATE admintable SET plate_info = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
-        break;
-    case 2:
-        qDebug()<<"第三列";
-        cmd=QString("UPDATE admintable SET balance = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
-        break;
-    case 3:
-        qDebug()<<"第四列";
-        cmd=QString("UPDATE admintable SET position = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
-        break;
-    case 4:
-        qDebug()<<"第五列";
-        cmd=QString("UPDATE admintable SET statime = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
-        break;
-    case 5:
-        qDebug()<<"第六列";
-        cmd=QString("UPDATE admintable SET endtime = '%1' WHERE id = '%2'").arg(item->text()).arg(firstitem->text());
-        break;
-    default:
-        break;
-    }
-    int ret=query.exec(cmd);
-    if(!ret)
-    {
-        printf("更新位置失败\n");
-        return ;
-    }
    // QMessageBox::critical(this,"管理员","修改成功");
 }
 
