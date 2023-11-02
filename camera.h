@@ -58,6 +58,7 @@ private:
     int ret;//标志位
     int g_fd_lcd;
     QLabel *mylabel;
+    QImage *image;
 };
 
 #endif // CAMERA_H

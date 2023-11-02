@@ -624,6 +624,26 @@ moc_admindialog.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QString \
 		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qtouchdevice.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QMessageBox \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qmessagebox.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QTableWidgetItem \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtablewidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtableview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractscrollarea.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qframe.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qabstractitemmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qitemselectionmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemdelegate.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyleoption.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractspinbox.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qvalidator.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qregularexpression.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qicon.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyle.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabbar.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabwidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qrubberband.h \
 		admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
 	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/Win_Linuxshare/class/QT/QtCarArm/mainmenu -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSql -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include admindialog.h -o moc_admindialog.cpp
@@ -1088,6 +1108,23 @@ moc_mainwindow.cpp: camera.h \
 		admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtSql/QSqlRecord \
 		/usr/local/Qt-Embedded-5.7.0/include/QtSql/qsqlrecord.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QTableWidgetItem \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtablewidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtableview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractscrollarea.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qabstractitemmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qitemselectionmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemdelegate.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyleoption.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractspinbox.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qvalidator.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qregularexpression.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyle.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabbar.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qrubberband.h \
 		advertisement.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QDir \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qdir.h \
@@ -1139,6 +1176,9 @@ moc_mainwindow.cpp: camera.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractbutton.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QMap \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QStringList \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QStackedWidget \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstackedwidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QUrlQuery \
 		mainwindow.h \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
 	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/Win_Linuxshare/class/QT/QtCarArm/mainmenu -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSql -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include mainwindow.h -o moc_mainwindow.cpp
@@ -1697,11 +1737,30 @@ admindialog.o: admindialog.cpp admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qtouchdevice.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QMessageBox \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qmessagebox.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QTableWidgetItem \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtablewidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtableview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractscrollarea.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qframe.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qabstractitemmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qitemselectionmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemdelegate.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyleoption.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractspinbox.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qvalidator.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qregularexpression.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qicon.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyle.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabbar.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabwidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qrubberband.h \
 		ui_admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QVariant \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QAction \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qaction.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qicon.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qactiongroup.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QApplication \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qapplication.h \
@@ -1714,22 +1773,6 @@ admindialog.o: admindialog.cpp admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qbuttongroup.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QHeaderView \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qheaderview.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemview.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractscrollarea.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qframe.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qabstractitemmodel.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qitemselectionmodel.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemdelegate.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyleoption.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractspinbox.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qvalidator.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qregularexpression.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qslider.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractslider.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyle.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabbar.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabwidget.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qrubberband.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QLabel \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qlabel.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QLineEdit \
@@ -1742,8 +1785,6 @@ admindialog.o: admindialog.cpp admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qpushbutton.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractbutton.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QTableWidget \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtablewidget.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtableview.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QWidget \
 		keyborad.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o admindialog.o admindialog.cpp
@@ -2393,6 +2434,23 @@ main.o: main.cpp mainwindow.h \
 		admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtSql/QSqlRecord \
 		/usr/local/Qt-Embedded-5.7.0/include/QtSql/qsqlrecord.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QTableWidgetItem \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtablewidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtableview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractscrollarea.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qabstractitemmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qitemselectionmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemdelegate.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyleoption.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractspinbox.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qvalidator.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qregularexpression.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyle.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabbar.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qrubberband.h \
 		advertisement.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QDir \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qdir.h \
@@ -2444,6 +2502,9 @@ main.o: main.cpp mainwindow.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractbutton.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QMap \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QStringList \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QStackedWidget \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstackedwidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QUrlQuery \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QTextCodec \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qtextcodec.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QApplication \
@@ -2585,6 +2646,23 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		admindialog.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtSql/QSqlRecord \
 		/usr/local/Qt-Embedded-5.7.0/include/QtSql/qsqlrecord.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QTableWidgetItem \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtablewidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtableview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemview.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractscrollarea.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qabstractitemmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qitemselectionmodel.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemdelegate.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyleoption.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractspinbox.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qvalidator.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qregularexpression.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractslider.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyle.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabbar.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qrubberband.h \
 		advertisement.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QDir \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qdir.h \
@@ -2636,6 +2714,9 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractbutton.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QMap \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QStringList \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QStackedWidget \
+		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstackedwidget.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QUrlQuery \
 		ui_mainwindow.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QAction \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qaction.h \
@@ -2652,20 +2733,6 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QFrame \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QHeaderView \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qheaderview.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemview.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractscrollarea.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qabstractitemmodel.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qitemselectionmodel.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractitemdelegate.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyleoption.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractspinbox.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qvalidator.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qregularexpression.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qslider.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qabstractslider.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qstyle.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qtabbar.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qrubberband.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 

@@ -27,6 +27,7 @@
 #include<QDir>
 #include<QPixmap>
 #include<QStackedWidget>
+#include<QUrlQuery>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -50,9 +51,12 @@ private slots:
 
     void on_pb_admlogin_clicked();
     void netReply(QNetworkReply *rep);
+    void netReply_2(QNetworkReply*rep);
     void on_pb_userlogin_clicked();
     void setLabelColor();
 
+
+    void on_pb_weather_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -61,7 +65,8 @@ private:
     sqlite3 *mysqlite;
     Advertisement *myadver;//广告播放对象
     QImage myimage;
-    QNetworkAccessManager myManager;
+    QNetworkAccessManager myManager;//关联车牌识别请求的回复
+    QNetworkAccessManager myManager_2;//关联天气请求的回复
     int starttime;//入库时间
     int endtime;//出库时间
     QString cardid;//车卡号

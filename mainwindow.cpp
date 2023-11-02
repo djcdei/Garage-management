@@ -17,6 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
                                   "    border-radius: 10px;"        // 边框圆角
                                   "    padding: 5px;"               // 内边距
                                   "}");
+    ui->pb_weather->setStyleSheet("QPushButton {"
+                                  "    background-color: #3d8ebe;"   // 背景颜色
+                                  "    border: 1px solid #2e6da4;"    // 边框样式
+                                  "    color: white;"                // 文本颜色
+                                  "    font-size: 16px;"             // 字体大小
+                                  "    border-radius: 5px;"          // 边框圆角
+                                  "    padding: 5px 10px;"           // 内边距,文字跟按钮边框的水平、垂直间距
+                                  "}");
     ui->pb_admlogin->setStyleSheet("QPushButton {"
                                    "    background-color: #3d8ebe;"   // 背景颜色
                                    "    border: 1px solid #2e6da4;"    // 边框样式
@@ -74,7 +82,8 @@ MainWindow::MainWindow(QWidget *parent)
     mysqlite->createTable();
 
     //关联http请求
-    connect(&myManager,SIGNAL(finished(QNetworkReply *)),this,SLOT(netReply(QNetworkReply *)));
+    connect(&myManager,SIGNAL(finished(QNetworkReply *)),this,SLOT(netReply(QNetworkReply *)));//车牌识别
+    connect(&myManager_2,SIGNAL(finished(QNetworkReply*)),this,SLOT(netReply_2(QNetworkReply*)));//天气获取
 
     //初始化一个管理员对话框
     adminDialog=new class adminDialog();
@@ -171,7 +180,7 @@ void MainWindow::cardidfun(int value)//自己定义的槽函数，刷卡之后�
     myimage= mycamera->camerPthoto();
     QByteArray byteAr;
     QBuffer buf(&byteAr);
-    myimage.save(&buf,"JPG");
+    myimage.save(&buf,"JPG");//将拍到的照片转化陈jpg格式存入buf
     //第一步初始化http请求
     QUrl myUrl("http://ocrcp.market.alicloudapi.com/rest/160601/ocr/ocr_vehicle_plate.json");
     QNetworkRequest myRequest(myUrl);
@@ -243,8 +252,6 @@ void MainWindow::netReply(QNetworkReply *rep)//自己关联的http请求回复�
             if(!mysqlite->insertInfo(cardid,platenum,88,"carstable"))
             {
                 printf("入库\n");
-                //选择车位界面
-               // cardialog->exec();
                 starttime=time(NULL);//记录入库时间
                 //打开一个窗口，让用户选择车位,阻塞打开，这个界面主要用于选择车位
                 carspace->setPlatenum(platenum);
@@ -292,6 +299,74 @@ void MainWindow::netReply(QNetworkReply *rep)//自己关联的http请求回复�
     }
 }
 
+void MainWindow::netReply_2(QNetworkReply *rep)//获取天气请求回复的槽函数
+{
+    qDebug()<<"回复了";
+    QString weatherText1;
+    QString weatherText2;
+    if (rep->error() == QNetworkReply::NoError)
+    {
+        QByteArray response = rep->readAll();
+        // 解析JSON响应
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(response);
+        if (!jsonDoc.isNull())
+        {
+            QJsonObject jsonObj = jsonDoc.object();
+
+            // 解析 JSON 数据
+            if (jsonObj.contains("showapi_res_body") && jsonObj["showapi_res_body"].isObject())
+            {
+                QJsonObject bodyObj = jsonObj["showapi_res_body"].toObject();
+
+                // 解析城市信息
+                if (bodyObj.contains("cityInfo") && bodyObj["cityInfo"].isObject())
+                {
+                    QJsonObject cityInfoObj = bodyObj["cityInfo"].toObject();
+                    QString city = cityInfoObj["c3"].toString();
+                    QString province = cityInfoObj["c7"].toString();
+                    QString country = cityInfoObj["c9"].toString();
+                    double latitude = cityInfoObj["latitude"].toDouble();
+                    double longitude = cityInfoObj["longitude"].toDouble();
+                    qDebug() << "City: " << city << ", Province: " << province << ", Country: " << country;
+                    qDebug() << "Latitude: " << latitude << ", Longitude: " << longitude;
+                     weatherText1=country+" "+province+" "+city;
+                }
+
+                // 解析日期
+                QString date = bodyObj["date"].toString();
+                qDebug() << "Date: " << date;
+
+                // 解析天气信息
+                if (bodyObj.contains("f1") && bodyObj["f1"].isObject())
+                {
+                    QJsonObject weatherObj = bodyObj["f1"].toObject();
+                    QString dayWeather = weatherObj["day_weather"].toString();
+                    QString nightWeather = weatherObj["night_weather"].toString();
+                    QString dayTemperature = weatherObj["day_air_temperature"].toString();
+                    QString nightTemperature = weatherObj["night_air_temperature"].toString();
+
+                    // 更新标签的文本
+                    weatherText2 = "早上天气:"       + dayWeather  +"\n"
+                                    +"晚上天气:"      + nightWeather + "\n"
+                                    +"早上温度:"      + dayTemperature + "°C\n"
+                                     +"晚上温度:"     + nightTemperature + "°C";
+                    ui->label_weather->setText(weatherText1+"\n"+weatherText2);
+                }
+
+                // 解析其他字段...
+            }
+        }
+        else
+        {
+            qDebug() << "Failed to parse JSON.";
+            // 处理 JSON 解析失败
+        }
+        rep->deleteLater();
+    }
+}
+
+
+
 
 QString MainWindow::getPlatenum()//获取当前车牌号，由选者车牌界面调用
 {
@@ -301,7 +376,11 @@ QString MainWindow::getPlatenum()//获取当前车牌号，由选者车牌界面
 
 
 
-void MainWindow::on_pb_userlogin_clicked()//用户登录
+void MainWindow::on_pb_userlogin_clicked
+
+
+
+()//用户登录
 {
 
 }
@@ -364,7 +443,7 @@ void MainWindow::handleButtonClicked()
 
     if (button == ui->pb_R)
     {
-        qDebug() << "左切";
+       // qDebug() << "左切";
         if(ui->widget_2->isHidden())
             ui->widget_2->show();
         else
@@ -372,7 +451,7 @@ void MainWindow::handleButtonClicked()
     }
     else if (button == ui->pb_L)
     {
-        qDebug() << "右切";
+        //qDebug() << "右切";
         // 执行右切的操作
         if(ui->widget_2->isHidden())
             QMessageBox::warning(this,"注意","这是第一页!");
@@ -381,4 +460,25 @@ void MainWindow::handleButtonClicked()
     }
 }
 
+
+
+void MainWindow::on_pb_weather_clicked()//获取天气信息发送请求
+{
+    qDebug()<<"查询天气";
+    // 定义API请求参数
+    QUrl apiUrl("http://ali-weather.showapi.com/area-to-weather-date");
+    QUrlQuery query;
+   // query.addQueryItem("areaCode", "530700");
+    query.addQueryItem("area", "广州");
+    query.addQueryItem("date", "20231102");
+    query.addQueryItem("need3HourForcast", "0");
+    apiUrl.setQuery(query);
+    // 创建API请求
+    QNetworkRequest request(apiUrl);
+
+    // 设置请求头，包括AppCode
+    request.setRawHeader("Authorization", "APPCODE 45c15f018bbc499793412d2418bf7ed0");
+    myManager_2.get(request);
+
+}
 

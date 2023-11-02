@@ -160,7 +160,7 @@ void adminDialog::on_tableWidget_itemChanged(QTableWidgetItem *item)//输入框�
     int row = item->row(); // 获取行号
     QTableWidgetItem *firstitem=ui->tableWidget->item(row,0);
     int col = item->column(); // 获取列号,根据列号来判断哪一个类型的数据改变了
-    if (!mybase.isOpen())//判断数据库是否打开了
+    if (!mybase.isOpen())//判断数据库是否打开了,为了限制刷新表格的时候也会触发下面的switch语句
     {
         if(!mybase.open())
         {       qDebug() << "无法打开数据库连接：" << mybase.lastError().text();
@@ -205,10 +205,9 @@ void adminDialog::on_tableWidget_itemChanged(QTableWidgetItem *item)//输入框�
                 printf("更新位置失败\n");
                 return ;
         }
-
+        QMessageBox::critical(this,"管理员","修改成功");
+        mybase.close();
     }
 
-
-   // QMessageBox::critical(this,"管理员","修改成功");
 }
 

@@ -124,7 +124,7 @@ camera::camera()
         printf("mmap fail\n");
         return;
     }
-
+    image=new QImage(WIDTH, HEIGHT, QImage::Format_RGB888);
 }
 
 int camera::cameraInit()
@@ -199,7 +199,6 @@ int camera::cameraInit()
 
 int camera::cameraCapture()//采集摄像头图像数据
 {
-  QImage image(WIDTH, HEIGHT, QImage::Format_RGB888);
   QPixmap pixmap;
     for (int i = 0; i < 4; i++)
     {
@@ -216,11 +215,12 @@ int camera::cameraCapture()//采集摄像头图像数据
         }
         // 将YUYV转换成RGB格式 显示在lcd上
         YUYVtoRGB(map[i].mptr, rgb_data, WIDTH, HEIGHT);
-       // lcd_show_rgb(rgb_data, WIDTH, HEIGHT, imageProperties.x, imageProperties.y);
+        usleep(1000);
+       // lcd_show_rgb(rgb_data, WIDTH, HEIGHT, 5, 5);
         // 更新QImage对象
-        image = QImage(rgb_data, WIDTH, HEIGHT, QImage::Format_RGB888);
+        *image = QImage(rgb_data, WIDTH, HEIGHT, QImage::Format_RGB888);
         // 更新QPixmap对象
-        pixmap = QPixmap::fromImage(image).scaled(mylabel->width(), mylabel->height());
+        pixmap = QPixmap::fromImage(*image).scaled(mylabel->width(), mylabel->height());
         mylabel->setScaledContents(true);
         mylabel->setPixmap(pixmap);
         // 再入队
@@ -234,6 +234,8 @@ int camera::cameraCapture()//采集摄像头图像数据
         bzero(map[i].mptr, map[i].length);
     }
     usleep(1000);
+    // bzero(rgb_data,sizeof(rgb_data));
+    memset(rgb_data,0,sizeof(rgb_data));
     return 0;
 }
 
